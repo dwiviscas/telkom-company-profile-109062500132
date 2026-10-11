@@ -1,26 +1,64 @@
 <?php
 require_once 'config/database.php';
-$pageTitle = 'Program Studi - Telkom University';
-$result = $conn->query("SELECT nama, jenjang, deskripsi FROM program_studi ORDER BY jenjang, nama");
+$pageTitle = 'Beranda - Telkom University';
 require 'includes/header.php';
 ?>
-<section class="section">
-<div class="container">
-<div class="section-heading">
-<span class="eyebrow">Program Studi</span>
-<h1>Daftar program studi</h1>
-<p class="lead">Data pada halaman ini diambil dari tabel <code>program_studi</code>
-.</p>
-</div>
-<div class="grid-3">
-<?php while ($row = $result->fetch_assoc()): ?>
-    <article class="card">
-<span class="badge"><?= htmlspecialchars($row['jenjang']) ?></span>
-<h3><?= htmlspecialchars($row['nama']) ?></h3>
-<p><?= htmlspecialchars($row['deskripsi']) ?></p>
-</article>
-<?php endwhile; ?>
-</div>
-</div>
+
+<section class="hero">
+    <div class="container hero-grid">
+
+        <div class="hero-content">
+            <span class="eyebrow">Praktikum Web Development</span>
+
+            <h1>
+                Belajar membangun website dinamis sambil
+                mempraktikkan Git.
+            </h1>
+
+            <p class="lead">
+                Proyek simulasi ini menggunakan HTML, CSS,
+                PHP native, MySQL/MariaDB, dan workflow Git
+                lokal serta GitHub.
+            </p>
+
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="programs.php">
+                    Lihat Program Studi
+                </a>
+
+                <a class="btn btn-secondary" href="news.php">
+                    Baca Berita
+                </a>
+            </div>
+        </div>
+
+        <aside class="hero-panel">
+            <span class="badge">Project Milestone</span>
+            <h3>Target praktikum</h3>
+
+            <div class="milestone-grid">
+                <div class="milestone-item">
+                    <strong>5+</strong>
+                    <span>Halaman PHP</span>
+                </div>
+
+                <div class="milestone-item">
+                    <strong>3</strong>
+                    <span>Tabel database</span>
+                </div>
+
+                <div class="milestone-item">
+                    <strong>8+</strong>
+                    <span>Commit terarah</span>
+                </div>
+
+                <div class="milestone-item">
+                    <strong>1</strong>
+                    <span>Remote GitHub</span>
+                </div>
+            </div>
+        </aside>
+
+    </div>
 </section>
 <?php require 'includes/footer.php'; ?>
